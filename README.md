@@ -23,7 +23,7 @@ So far I've been focusing on creating a robust, loosely coupled, extensible arch
 - **Ability to display multiple blueprints as individual workspace** – the app supports opening multiple blueprints through the concept of 'workspaces', similarly to how we open multiple tabs in a web browser.
 
 ## Architectural aspects already in place:
-- **Robust command/query implementation that encapsulates operations into easy-to-manage units** – this provides the foundation of all operations the app will support.
+- **Robust command/query implementation that encapsulates operations into easy-to-manage units** – this serves as the foundation of all operations the app will support.
 - **Fully self-contained and presentation-independent app core** - Core functionalities don't rely on the current GUI implementation; in fact I'm planning to add a console interface too.
 - **Standard Model-View-ViewModel architecture** – with property change notifications, commanding, no codebehind, ViewModels fully decoupled from Views, communication among ViewModels handled by message bus.
 - **Unit Testing with NUnit and Moq** - Most core features will be unit tested to detect regressions and ensure the integrity of the written blueprint files.
