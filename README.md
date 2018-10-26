@@ -31,5 +31,5 @@ So far I've been focusing on creating a robust, loosely coupled, extensible arch
 
 # Requirements for running the app
 
-- As essentially all functionality of this app is dependent on external XML definition files found in the folder of the relevant game, it requires the game to be present, and upon first launch it asks for the location of the required resources (while also providing auto-detection of the resources).
+- As essentially all features of this app are dependent on external XML definition files found in the folder of the relevant game, it requires the game to be present, and upon first launch it asks for the location of the required resources (while also providing auto-detection). Later I'll consider including a static version of these files, if the developer consents.
 
