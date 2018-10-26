@@ -13,7 +13,7 @@ Intended to be useful before uploading blueprints to the Steam Workshop.
 
 # Project status:
 
-Early development, no release build, master is not stable yet. Initial commit have been just pushed out, after the volatility of the foundational aspects of the design seemed to have finally settled. :)
+Early development, no release build, master is not stable yet. Initial commit have been just pushed out, after the volatility of the foundational aspects of the design seemed to have finally settled. :) So at the moment this won't be so interesting for common users.
 
 So far I've been focusing on creating a robust, loosely coupled, extensible architecture that will allow me to come back to it at any arbitrary time and easily add new features, and/or update the existing ones to reflect the changes of the game.
 
