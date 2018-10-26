@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="LeakysBlueprinter.Views.ResourceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeakysBlueprinter.Views"
+             xmlns:viewmodels="clr-namespace:LeakysBlueprinter.ViewModels"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:converters="clr-namespace:LeakysBlueprinter.Converters"
+             mc:Ignorable="d" 
+             d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance d:Type=viewmodels:ResourceViewModel, IsDesignTimeCreatable=True}"
+             d:DesignStyle="{StaticResource WhiteUserControlBg}"
+             FontSize="14">
+
+    <DockPanel Margin="20,5">
+        <fa:ImageAwesome Height="25" Width="43" Foreground="{Binding FileUriValid, Converter={StaticResource BoolToColorConverter}}" Icon="{Binding FileUriValid, Converter={StaticResource BoolToIconConverter}}" VerticalAlignment="Center"/>
+        <Button DockPanel.Dock="Right" VerticalAlignment="Center" Padding="10" Command="{Binding SelectFileCommand}">
+            <Button.Content>
+                <fa:ImageAwesome Width="30" Height="30" Icon="FolderOpen" Foreground="#333333"/>
+            </Button.Content>
+        </Button>
+        <DockPanel Margin="10,0,10,0">
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left" Text="{Binding DisplayName}" FontSize="20" FontWeight="Light" Margin="0,0,10,0"/>
+                <TextBlock DockPanel.Dock="Left" Text="{Binding TargetFileName, StringFormat=({0})}" FontSize="16" FontWeight="bold" VerticalAlignment="Bottom" Margin="0,0,0,2"/>
+            </DockPanel>
+
+            <TextBlock DockPanel.Dock="Top" Text="{Binding Description}"/>
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left" Text="Path:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                <TextBox DockPanel.Dock="Left" Padding="3" BorderBrush="Transparent" Text="{Binding FileUri}" ToolTip="{Binding FileUri}" IsReadOnly="True"/>
+            </DockPanel>
+        </DockPanel>
+        
+    </DockPanel>
+</UserControl>

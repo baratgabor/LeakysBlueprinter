@@ -13,14 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LeakysBlueprinter
+namespace LeakysBlueprinter.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class SetupView : UserControl
     {
-        public MainWindow()
+        public SetupView()
         {
             InitializeComponent();
         }

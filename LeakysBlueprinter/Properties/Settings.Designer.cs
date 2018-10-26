@@ -8,22 +8,97 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LeakysBlueprinter.Properties
-{
-
-
+namespace LeakysBlueprinter.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Leaky\'s Blueprinter")]
+        public string ApplicationName {
+            get {
+                return ((string)(this["ApplicationName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public byte MaxRecentFiles {
+            get {
+                return ((byte)(this["MaxRecentFiles"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" />")]
+        public global::System.Collections.Specialized.StringCollection RecentFilesList {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["RecentFilesList"]));
+            }
+            set {
+                this["RecentFilesList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Resources_CachedUris {
+            get {
+                return ((string)(this["Resources_CachedUris"]));
+            }
+            set {
+                this["Resources_CachedUris"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Content\\Data\\|Content\\Data\\|Content\\Data\\|Content\\Data\\Localization")]
+        public string Resources_RelativePathConst {
+            get {
+                return ((string)(this["Resources_RelativePathConst"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CubeBlocks.sbc|Components.sbc|Blueprints.sbc|MyTexts.resx")]
+        public string Resources_TargetFileNamesConst {
+            get {
+                return ((string)(this["Resources_TargetFileNamesConst"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Block definitions|Component definitions|Blueprint definitions|Localization file")]
+        public string Resources_ResourceNamesConst {
+            get {
+                return ((string)(this["Resources_ResourceNamesConst"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"This file tells us everything about those juicy blocks you build with.|This file gives us basic info about components, like steel plate, glass, etc.|This file has the recipes of components, like what ingots are they made of.|This file has the names of things in English. Literally just that.")]
+        public string Resources_ResourceDescriptionsConst {
+            get {
+                return ((string)(this["Resources_ResourceDescriptionsConst"]));
             }
         }
     }

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC444C76-47EF-4648-9F2A-63F6A5A4A9C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeakysBlueprinter.Model</RootNamespace>
+    <AssemblyName>LeakysBlueprinter.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Access\Ingestion\ResourceLoader.cs" />
+    <Compile Include="Data Access\Ingestion\XmlStreamSerializer.cs" />
+    <Compile Include="Data Access\Ingestion\LoadableResource.cs" />
+    <Compile Include="Data Access\Ingestion\XmlStreamToXDocumentSerializer.cs" />
+    <Compile Include="Data Access\Ingestion\_ILoadableResource.cs" />
+    <Compile Include="Data Access\Ingestion\_ISerializer.cs" />
+    <Compile Include="Data Access\IO\_IReading_IWriting_ICreating.cs" />
+    <Compile Include="Commands\Base\CommandHandlerBase.cs" />
+    <Compile Include="Commands\CompleteAllBlocksCommand.cs" />
+    <Compile Include="Commands\Base\GridCommandHandlerBase.cs" />
+    <Compile Include="Commands\Base\IMyBlockCommand.cs" />
+    <Compile Include="Commands\Base\IMyBlueprintCommand.cs" />
+    <Compile Include="Commands\Base\IMyGridCommand.cs" />
+    <Compile Include="Commands\CompleteAllBlocksCommandHandler.cs" />
+    <Compile Include="Commands\RemoveAllBlockDamageCommandHandler.cs" />
+    <Compile Include="Commands\RemoveAllBlockDamageCommand.cs" />
+    <Compile Include="Commands\RemoveDeformationsCommand.cs" />
+    <Compile Include="Commands\RemoveDeformationsCommandHandler.cs" />
+    <Compile Include="Commands\Base\IMyCommandHandler.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlockBases\MyObjectBuilder_AirtightDoorGenericDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlockBases\MyObjectBuilder_MechanicalConnectionBlockBaseDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_AirtightSlideDoorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_AirtightHangarDoorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_LaserAntennaDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_MergeBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_SpaceBallDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_VirtualMassDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ConveyorSorterDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_PoweredCargoContainerDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_OxygenFarmDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_SolarPanelDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_TimerBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ButtonPanelDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_MotorAdvancedStatorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_MotorSuspensionDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_MotorStatorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ExtendedPistonBaseDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_PistonBaseDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_PhysicalObject.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_Ingot.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlockBases\MyObjectBuilder_ShipControllerDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlockBases\MyObjectBuilder_GravityGeneratorBaseDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ReactorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_GyroDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_CameraBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ThrustDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_CargoContainerDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_UpgradeModuleDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_AirVentDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_RemoteControlDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_GasTankDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_TextPanelDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_SoundBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_SensorBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ShipDrillDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_CryoChamberDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_CockpitDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_JumpDriveDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_GravityGeneratorSphereDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_GravityGeneratorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_MedicalRoomDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_RefineryDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlockBases\MyObjectBuilder_ProductionBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_OxygenGeneratorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_AssemblerDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_OreDetectorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_RadioAntennaDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_BeaconDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ReflectorBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_LightingBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_WarheadDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_LandingGearDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ProjectorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_LargeTurretBaseDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_WeaponBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_ProgrammableBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlockBases\MyObjectBuilder_PowerProducerDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_DoorDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\CubeBlocks\MyObjectBuilder_BatteryBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_Definitions.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\Not found CubeBlocks\MyObjectBuilder_DebugSphereDefinitions.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\Not found CubeBlocks\MyObjectBuilder_ParachuteDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\Not found CubeBlocks\MyObjectBuilder_ShipGrinderDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\Not found CubeBlocks\MyObjectBuilder_ShipWelderDefinition.cs" />
+    <Compile Include="Operation\IOperation.cs" />
+    <Compile Include="Queries\Base\GridQueryHandlerBase.cs" />
+    <Compile Include="Queries\Base\QueryHandlerBase.cs" />
+    <Compile Include="Queries\Base\IGridQuery.cs" />
+    <Compile Include="Queries\GetGridMassQuery.cs" />
+    <Compile Include="Queries\GetGridMassQueryHandler.cs" />
+    <Compile Include="Queries\Base\IQuery.cs" />
+    <Compile Include="Queries\Base\IQueryHandler.cs" />
+    <Compile Include="Repositories\BlueprintDataContext.cs" />
+    <Compile Include="Services\AppModelFactory.cs" />
+    <Compile Include="Repositories\Helper\DefinitionsTranslator.cs" />
+    <Compile Include="Repositories\DefinitionsRepository.cs" />
+    <Compile Include="Repositories\Base\_IDefinitionBaseRepositoryFactory.cs" />
+    <Compile Include="Repositories\Helper\DefinitionsBaseRepoFactory.cs" />
+    <Compile Include="Repositories\Base\_IDefinitionsProvider.cs" />
+    <Compile Include="Repositories\Helper\DefinitionsLoader.cs" />
+    <Compile Include="Repositories\Base\_IRepository.cs" />
+    <Compile Include="Repositories\Base\_IBlueprintDataContext.cs" />
+    <Compile Include="Repositories\Base\_IDefinitionBaseRepository.cs" />
+    <Compile Include="Repositories\Base\_IDefinitionsRepository.cs" />
+    <Compile Include="Obsolete_Rejected\RecipeRepository.cs" />
+    <Compile Include="Exceptions\AppException.cs" />
+    <Compile Include="Exceptions\ExceptionKind.cs" />
+    <Compile Include="Obsolete_Rejected\Recipe.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\BlueprintItem.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_ComponentGroupDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_Base.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_BlueprintDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_ComponentDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_CubeBlockDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_DefinitionBase.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_PhysicalItemDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\MyObjectBuilder_PhysicalModelDefinition.cs" />
+    <Compile Include="EntityDefinitions\KeenDefinitions\SerializableDefinitionId.cs" />
+    <Compile Include="Obsolete_Rejected\Mapper.cs" />
+    <Compile Include="Services\BlueprintService.cs" />
+    <Compile Include="Services\ApplicationService.cs" />
+    <Compile Include="Obsolete_Rejected\_IAsyncInitialization.cs" />
+    <Compile Include="Commands\Base\IMyCommand.cs" />
+    <Compile Include="Services\_IService.cs" />
+    <Compile Include="Utility\Keen Replicas\Vector4.cs" />
+    <Compile Include="Utility\Keen Replicas\SerializableBounds.cs" />
+    <Compile Include="Utility\Keen Replicas\SerializableVector2I.cs" />
+    <Compile Include="Utility\Keen Replicas\SerializableVector3.cs" />
+    <Compile Include="Utility\Keen Replicas\SerializableVector3I.cs" />
+    <Compile Include="Utility\Keen Replicas\SerializableVector3UByte.cs" />
+    <Compile Include="Utility\Keen Replicas\Vector2I.cs" />
+    <Compile Include="Obsolete_Rejected\Block.cs" />
+    <Compile Include="Obsolete_Rejected\Blueprint.cs" />
+    <Compile Include="Obsolete_Rejected\Component.cs" />
+    <Compile Include="Data Access\IO\FileStreamProvider.cs" />
+    <Compile Include="Obsolete_Rejected\ItemId.cs" />
+    <Compile Include="Obsolete_Rejected\ItemSize.cs" />
+    <Compile Include="Obsolete_Rejected\Interfaces.cs" />
+    <Compile Include="Obsolete_Rejected\_mock.cs" />
+    <Compile Include="Obsolete_Rejected\_prototyping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ResxRepository.cs" />
+    <Compile Include="Repositories\DefinitionBaseRepository.cs" />
+    <Compile Include="Obsolete_Rejected\_specifications.cs" />
+    <Compile Include="Utility\Keen Replicas\SerializableVector2.cs" />
+    <Compile Include="Utility\Keen Replicas\Vector2.cs" />
+    <Compile Include="Utility\Keen Replicas\Vector3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

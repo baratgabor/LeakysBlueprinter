@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="LeakysBlueprinter.Views.WelcomeWorkspaceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeakysBlueprinter.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignStyle="{StaticResource WhiteUserControlBg}">
+
+    <!--DataContext set implicitly by DataTemplate in MainView-->
+    
+    <StackPanel Margin="15">
+        
+        <TextBlock Margin="20" TextWrapping="Wrap" FontFamily="open-sans" FontSize="30">Welcome to Leaky's quick and dirty blueprint manager!</TextBlock>
+
+        <TextBlock Margin="30,0,30,20" TextWrapping="Wrap" FontFamily="open-sans" FontSize="18">If you want to jump in right away, simply open a blueprint file with the “<TextBlock FontWeight="Bold" Foreground="#444444">Open Blueprint</TextBlock>” command on the left.</TextBlock>
+        
+        <TextBlock Margin="30,0,30,0" TextWrapping="Wrap" FontFamily="open-sans" FontStyle="Italic" FontSize="18">Remember that this app is in early development, so the functionality – and aesthetics – is quite limited.</TextBlock>
+
+    </StackPanel>
+</UserControl>
