@@ -1,6 +1,6 @@
 # Leaky's Blueprinter
 
-This is Windows desktop app for Space Engineers, made for the purpose of analyzing blueprint files and executions various actions on them, for example:
+This is Windows desktop app for Space Engineers, made for the purpose of analyzing local blueprint files and executing various actions on them, for example:
 - Correcting damages
 - Deleting deformations
 - Changing block colors
