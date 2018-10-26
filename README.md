@@ -1,6 +1,6 @@
 # Leaky's Blueprinter
 
-This is Windows desktop app (.Net/C#/WPF) for Space Engineers, made for the purpose of analyzing local blueprint files and executing various actions on them, for example:
+This is a Windows desktop app for Space Engineers, made for the purpose of analyzing local blueprint files and executing various operations on them, for example:
 - Repairing block damages and completing blocks
 - Deleting deformations
 - Changing block colors
@@ -10,7 +10,7 @@ This is Windows desktop app (.Net/C#/WPF) for Space Engineers, made for the purp
 - Setting up wheel suspensions according to grid dimensions and mass
 - And many more
 
-Intended to be useful before uploading blueprints to the Steam Workshop.
+It's intended to be useful for preparing blueprints before uploading them to the Steam Workshop.
 
 # Project status
 
