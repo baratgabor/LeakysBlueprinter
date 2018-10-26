@@ -5,7 +5,7 @@ This is a Windows desktop app for Space Engineers, made for the purpose of analy
 - Deleting deformations
 - Changing block colors
 - Analyzing flight and cargo capabilities
-- Analyzing total resources needed for building the bluprint
+- Analyzing the total resources needed for building the blueprint
 - Setting up gravity generators and projectors automatically according to grid dimensions
 - Setting up wheel suspensions according to grid dimensions and mass
 - And many more
