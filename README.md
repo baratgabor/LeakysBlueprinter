@@ -11,7 +11,7 @@ This is Windows desktop app (.Net/C#/WPF) for Space Engineers, made for the purp
 
 Intended to be useful before uploading blueprints to the Steam Workshop.
 
-# Project status:
+# Project status
 
 Early development, no release build, master is not stable yet. Initial commit have been just pushed out, after the volatility of the foundational aspects of the design seemed to have finally settled. :) So at the moment this won't be so interesting for common users.
 
@@ -33,3 +33,15 @@ So far I've been focusing on creating a robust, loosely coupled, extensible arch
 
 - As essentially all features of this app are dependent on external XML definition files found in the folder of the relevant game, it requires the game to be present, and upon first launch it asks for the location of the required resources (while also providing auto-detection). Later I'll consider including a static version of these files, if the developer consents.
 
+# Roadmap
+In the upcoming period I'll start to focus on pushing out a first release version with a basic set of features that can be actually useful for the community.
+
+- **Blueprint saving with backup copies:** Well, this hardly needs any explanation, and it won't take long to implement. :)
+- **Designing a GUI presentation that can expose complex, variable groups of information and commands:** This is the main dilemma at the moment. I want a system that can work pretty much automatically and won't require a lot of manual UI design. Especially because blueprints are highly complex and variable, so it needs to support blueprints with all sorts of contents (ship, base, wheeled vehicle; single grid, multi grid; cargo contents, etc.).
+- **Additional blueprint queries:** Flight statistics of flight-capable grids, overall resources required for welding...
+- **Integration testing:** Some basic testing of the subsystems of the app to ensure that they output what they're supposed to. It's crucial to avoid writing out blueprints with invalid structure.
+- **First release build**
+- **Undo/redo functionality for commands:** I'm planning to implement this after the initial release, because most likely people won't do deep command queues anyway, so I don't expect this to be a crucial feature here.
+- **Adding additional features that query and modify blueprints:** Lots of possibilities here; I'll try to gather feedbacks from the community.
+- **'Codex' screen for manual lookups:** In other words, looking up block, component, etc. information in the definitions database, for example if you want to see how much certain things weight or cost. Current plans include being able to place and pin the looked up items on a canvas, and saving/loading the created layouts.
+- **Also considered as a longer term goal: Programmable block execution simulation on grids:** Exactly what it sounds like. Would be useful to be able to run the scripts inside programmable blocks, and see how does that affect the various blocks on the grid, including the contents of displays. Again, the primary difficulty here is integrating these things into the graphical interface, especially since I'm not a UI/UX designer.
