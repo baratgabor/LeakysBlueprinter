@@ -18,7 +18,7 @@ Early development, no release build, master is not stable yet. Initial commit ha
 So far I've been focusing on creating a robust, loosely coupled, extensible architecture that will allow me to come back to it at any arbitrary time and easily add new features, and/or update the existing ones to reflect the changes of the game.
 
 ## Main features already implemented:
-- **Ability to read and deserialize all relevant definition files** of the game – this provides the app with always-up-to-date information about blocks, block recipes, components, component recipes, ingots, ingot recipes and ores).
+- **Ability to read and deserialize all relevant definition files of the game** – this provides the app with *always-up-to-date information* about blocks, block recipes, components, component recipes, ingots, ingot recipes and ores.
 - **Ability to read and deserialize blueprint files** – the basic architecture for opening and handling these files is already in place.
 - **Ability to display multiple blueprints as individual workspace** – the app supports opening multiple blueprints through the concept of 'workspaces', similarly to how we open multiple tabs in a web browser.
 
