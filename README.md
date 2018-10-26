@@ -28,3 +28,8 @@ So far I've been focusing on creating a robust, loosely coupled, extensible arch
 - **Standard Model-View-ViewModel architecture** – With property change notifications, commanding, no codebehind, ViewModels fully decoupled from Views, and communication among ViewModels handled by a message bus.
 - **Unit Testing with NUnit and Moq** – Most core features will be unit tested to detect regressions and ensure the integrity of the written blueprint files.
 - **Fluent nested test data builder to facilitate the unit testing of data-dependent classes** – One of the emerging foundational elements of unit testing in this project; allows the rapid assembly of test data, instead of having to rely on dozens of variations of static template data.
+
+# Requirements for running the app
+
+- As essentially all functionality of this app is dependent on external XML definition files found in the folder of the relevant game, it requires the game to be present, and upon first launch it asks for the location of the required resources (while also providing auto-detection of the resources).
+
