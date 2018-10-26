@@ -237,7 +237,7 @@
     <Resource Include="Media\SplashScreen1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LeakysBlueprinter.Models\LeakysBlueprinter.Model.csproj">
+    <ProjectReference Include="..\LeakysBlueprinter.Model\LeakysBlueprinter.Model.csproj">
       <Project>{bc444c76-47ef-4648-9f2a-63f6a5a4a9c6}</Project>
       <Name>LeakysBlueprinter.Model</Name>
     </ProjectReference>
