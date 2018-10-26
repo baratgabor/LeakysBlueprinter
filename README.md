@@ -25,6 +25,6 @@ So far I've been focusing on creating a robust, loosely coupled, extensible arch
 ## Architectural aspects already in place:
 - **Robust command/query implementation that encapsulates operations into easy-to-manage units** – this serves as the foundation of all operations the app will support.
 - **Fully self-contained and presentation-independent app core** - Core functionalities don't rely on the current GUI implementation; in fact I'm planning to add a console interface too.
-- **Standard Model-View-ViewModel architecture** – with property change notifications, commanding, no codebehind, ViewModels fully decoupled from Views, communication among ViewModels handled by message bus.
+- **Standard Model-View-ViewModel architecture** – with property change notifications, commanding, no codebehind, ViewModels fully decoupled from Views, and communication among ViewModels handled by a message bus.
 - **Unit Testing with NUnit and Moq** - Most core features will be unit tested to detect regressions and ensure the integrity of the written blueprint files.
 - **Fluent nested test data builder to facilitate the unit testing of data-dependent classes.** – One of the emerging foundational element of unit testing in this project; allows the rapid assembly of test data, instead of having to rely on dozens of variations of static template data.
