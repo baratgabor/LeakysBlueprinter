@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeakysBlueprinter", "LeakysBlueprinter\LeakysBlueprinter.csproj", "{7F0A7164-5DEE-460A-81BE-2D6B56AD05B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeakysBlueprinter.UI.WPF", "LeakysBlueprinter.UI.WPF\LeakysBlueprinter.UI.WPF.csproj", "{7F0A7164-5DEE-460A-81BE-2D6B56AD05B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeakysBlueprinter.Model", "LeakysBlueprinter.Model\LeakysBlueprinter.Model.csproj", "{BC444C76-47EF-4648-9F2A-63F6A5A4A9C6}"
 EndProject
