@@ -1,16 +1,16 @@
 # Leaky's Blueprinter
 
-This is Windows desktop app (.Net/C#/WPF) for Space Engineers, made for the purpose of analyzing local blueprint files and executing various actions on them, for example:
+This is a Windows desktop app for Space Engineers, made for the purpose of analyzing local blueprint files and executing various operations on them, for example:
 - Repairing block damages and completing blocks
 - Deleting deformations
 - Changing block colors
 - Analyzing flight and cargo capabilities
-- Analyzing total resources needed for building the bluprint
+- Analyzing the total resources needed for building the blueprint
 - Setting up gravity generators and projectors automatically according to grid dimensions
 - Setting up wheel suspensions according to grid dimensions and mass
 - And many more
 
-Intended to be useful before uploading blueprints to the Steam Workshop.
+It's intended to be useful for preparing blueprints before uploading them to the Steam Workshop.
 
 # Project status
 
@@ -27,8 +27,8 @@ So far I've been focusing on creating a robust, loosely coupled, extensible arch
 - **Robust command/query implementation that encapsulates operations into easy-to-manage units** – This serves as the foundation of all the operations the app will support, and will facilitate the implementation of an undo/redo stack.
 - **Fully self-contained and presentation-independent app core** – Core functionalities don't rely on the current GUI implementation; in fact I'm planning to add a console interface too.
 - **Standard Model-View-ViewModel architecture** – With property change notifications, commanding, no codebehind, ViewModels fully decoupled from Views, and communication among ViewModels handled by a message bus.
-- **Unit Testing with NUnit and Moq** – Most core features will be unit tested to detect regressions and ensure the integrity of the written blueprint files.
-- **Fluent nested test data builder to facilitate the unit testing of data-dependent classes** – One of the emerging foundational elements of unit testing in this project; allows the rapid assembly of test data, instead of having to rely on dozens of variations of static template data.
+- **Unit Testing with NUnit and Moq** – Most core features will be unit tested to detect regressions and ensure the integrity of the written blueprint files. 
+- **Fluent nested test data builder to facilitate the unit testing of data-dependent classes** – One of the emerging foundational elements of unit testing in this project; allows the test data to be rapidly assembled with simple method call chains instead of having to rely on dozens of variations of static template data.
 
 # Requirements for running the app
 
