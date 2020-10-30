@@ -15,17 +15,5 @@
     <Setting Name="Resources_CachedUris" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Resources_RelativePathConst" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Content\Data\|Content\Data\|Content\Data\|Content\Data\Localization</Value>
-    </Setting>
-    <Setting Name="Resources_TargetFileNamesConst" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">CubeBlocks.sbc|Components.sbc|Blueprints.sbc|MyTexts.resx</Value>
-    </Setting>
-    <Setting Name="Resources_ResourceNamesConst" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Block definitions|Component definitions|Blueprint definitions|Localization file</Value>
-    </Setting>
-    <Setting Name="Resources_ResourceDescriptionsConst" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">This file tells us everything about those juicy blocks you build with.|This file gives us basic info about components, like steel plate, glass, etc.|This file has the recipes of components, like what ingots are they made of.|This file has the names of things in English. Literally just that.</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

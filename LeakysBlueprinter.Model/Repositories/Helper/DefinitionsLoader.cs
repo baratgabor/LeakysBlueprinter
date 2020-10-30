@@ -30,7 +30,7 @@ namespace LeakysBlueprinter.Model
                     // TODO: Would be neater not to reference the members in this hard-coded way
                     Blueprints = fragmentedDefinitions.Where(d => d.Blueprints != null).Single().Blueprints,
                     Components = fragmentedDefinitions.Where(d => d.Components != null).Single().Components,
-                    CubeBlocks = fragmentedDefinitions.Where(d => d.CubeBlocks != null).Single().CubeBlocks
+                    CubeBlocks = fragmentedDefinitions.Where(d => d.CubeBlocks != null).SelectMany(c => c.CubeBlocks).ToArray()
                 };
             }
             catch (Exception ex)

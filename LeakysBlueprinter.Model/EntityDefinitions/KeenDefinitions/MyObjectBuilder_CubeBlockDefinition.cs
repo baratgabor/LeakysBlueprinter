@@ -130,6 +130,9 @@ namespace LeakysBlueprinter.Model
         ZMinusHalfX,
         ZThenOffsetX,
         YThenOffsetX,
+        OffsetX,
+        ZThenOffsetXOdd,
+        YThenOffsetXOdd
     }
 
     public enum MyAutorotateMode
@@ -181,6 +184,19 @@ namespace LeakysBlueprinter.Model
     [XmlInclude(typeof(MyObjectBuilder_DebugSphere1Definition))]
     [XmlInclude(typeof(MyObjectBuilder_DebugSphere2Definition))]
     [XmlInclude(typeof(MyObjectBuilder_DebugSphere3Definition))]
+    [XmlInclude(typeof(MyObjectBuilder_KitchenDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_PlanterDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_VendingMachineDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_JukeboxDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_LCDPanelsBlockDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_StoreBlockDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_SafeZoneBlockDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_ContractBlockDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_HydrogenEngineDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_WindTurbineDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_ShipConnectorDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_SurvivalKitDefinition))]
+    [XmlInclude(typeof(MyObjectBuilder_DecoyDefinition))]
     [XmlInclude(typeof(MyObjectBuilder_ParachuteDefinition))]
     [XmlInclude(typeof(MyObjectBuilder_AirtightSlideDoorDefinition))]
     [XmlInclude(typeof(MyObjectBuilder_AirtightHangarDoorDefinition))]

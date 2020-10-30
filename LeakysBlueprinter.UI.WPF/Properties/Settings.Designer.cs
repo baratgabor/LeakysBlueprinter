@@ -12,7 +12,7 @@ namespace LeakysBlueprinter.UI.WPF.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -63,42 +63,6 @@ namespace LeakysBlueprinter.UI.WPF.Properties {
             }
             set {
                 this["Resources_CachedUris"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Content\\Data\\|Content\\Data\\|Content\\Data\\|Content\\Data\\Localization")]
-        public string Resources_RelativePathConst {
-            get {
-                return ((string)(this["Resources_RelativePathConst"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CubeBlocks.sbc|Components.sbc|Blueprints.sbc|MyTexts.resx")]
-        public string Resources_TargetFileNamesConst {
-            get {
-                return ((string)(this["Resources_TargetFileNamesConst"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Block definitions|Component definitions|Blueprint definitions|Localization file")]
-        public string Resources_ResourceNamesConst {
-            get {
-                return ((string)(this["Resources_ResourceNamesConst"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"This file tells us everything about those juicy blocks you build with.|This file gives us basic info about components, like steel plate, glass, etc.|This file has the recipes of components, like what ingots are they made of.|This file has the names of things in English. Literally just that.")]
-        public string Resources_ResourceDescriptionsConst {
-            get {
-                return ((string)(this["Resources_ResourceDescriptionsConst"]));
             }
         }
     }

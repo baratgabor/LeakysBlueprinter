@@ -46,6 +46,9 @@ namespace LeakysBlueprinter.UI.WPF
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
+#if DEBUG
+            throw e.Exception;
+#endif
             MessageBox.Show("Unhandled exception occurred: " + e.Exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
             // TODO: Proper exception handling
             e.Handled = true;

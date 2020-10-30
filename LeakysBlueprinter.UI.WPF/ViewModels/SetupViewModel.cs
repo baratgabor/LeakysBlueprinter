@@ -11,6 +11,7 @@ using LeakysBlueprinter.UI.WPF.Utilities;
 using System.Windows.Input;
 using Easy.MessageHub;
 using LeakysBlueprinter.UI.WPF.EventPayloads;
+using LeakysBlueprinter.UI.WPF.Setup.StaticConfig;
 
 namespace LeakysBlueprinter.UI.WPF.ViewModels
 {
@@ -58,10 +59,6 @@ namespace LeakysBlueprinter.UI.WPF.ViewModels
         protected string _targetAppFolder;
 
         protected List<string> resources_CachedUris;
-        protected List<string> resources_RelativePaths;
-        protected List<string> resources_TargetFileNames;
-        protected List<string> resources_ResourceNames;
-        protected List<string> resources_Descriptions;
 
         // message part depending on autodetections status:
         // if not set for any, i.e. autodetect failed: "Could you help us a bit?"
@@ -89,7 +86,7 @@ namespace LeakysBlueprinter.UI.WPF.ViewModels
         protected void SetupViewModel_Inner()
         {
             DisplayName = "Setup";
-            ReadResourceSettings();
+            PopulateRequiredResources();
 
             if (RunSkippable())
             {
@@ -130,29 +127,21 @@ namespace LeakysBlueprinter.UI.WPF.ViewModels
                 ResourceStatuses.Add(
                     new ResourceViewModel(
                         messageHub: _messageHub,
-                        targetFileName: resources_TargetFileNames[i],
-                        relativePath: resources_RelativePaths[i],
-                        displayName: resources_ResourceNames[i],
-                        description: resources_Descriptions[i],
+                        targetFileName: ResourceConfig.ResourceDefaults[i].TargetFileName,
+                        relativePath: ResourceConfig.ResourceDefaults[i].RelativePath,
+                        displayName: ResourceConfig.ResourceDefaults[i].DisplayName,
+                        description: ResourceConfig.ResourceDefaults[i].Description,
                         existingFileUri: resources_CachedUris[i]
                 ));
                 ResourceStatuses[i].PropertyChanged += HandlePropertyChanged;
             }
         }
 
-        private void ReadResourceSettings()
+        private void PopulateRequiredResources()
         {
             resources_CachedUris = new List<string>(Properties.Settings.Default.Resources_CachedUris.Split(_settingsDelimiter));
-            resources_RelativePaths = new List<string>(Properties.Settings.Default.Resources_RelativePathConst.Split(_settingsDelimiter));
-            resources_TargetFileNames = new List<string>(Properties.Settings.Default.Resources_TargetFileNamesConst.Split(_settingsDelimiter));
-            resources_ResourceNames = new List<string>(Properties.Settings.Default.Resources_ResourceNamesConst.Split(_settingsDelimiter));
-            resources_Descriptions = new List<string>(Properties.Settings.Default.Resources_ResourceDescriptionsConst.Split(_settingsDelimiter));
 
-            // Are all Counts equal? (except CachedUris user setting)
-            if (new[] { resources_RelativePaths.Count, resources_TargetFileNames.Count, resources_ResourceNames.Count, resources_Descriptions.Count }.Distinct().Count() != 1)
-                throw new Exception("App configuration settings corrupted, cannot load resources.");
-
-            _resourceCount = resources_TargetFileNames.Count;
+            _resourceCount = ResourceConfig.ResourceDefaults.Count;
 
             if (resources_CachedUris == null || resources_CachedUris.Count != _resourceCount)
                 resources_CachedUris = new List<string>(new string[_resourceCount]);

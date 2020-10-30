@@ -124,6 +124,8 @@
     <Compile Include="Converters\BoolToIconConverter.cs" />
     <Compile Include="EventPayloads\SelectFileUriThroughDialog.cs" />
     <Compile Include="EventPayloads\SelectFolderThroughDialog.cs" />
+    <Compile Include="Setup\DTO\ResourceDto.cs" />
+    <Compile Include="Setup\StaticConfig\ResourceConfig.cs" />
     <Compile Include="Utilities\ExtensionMethods.cs" />
     <Compile Include="Utilities\InstalledApplicationsFinder.cs" />
     <Compile Include="Utilities\ObservableQueue.cs" />
