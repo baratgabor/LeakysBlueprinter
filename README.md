@@ -12,6 +12,8 @@ This is a Windows desktop app for Space Engineers, made for the purpose of analy
 
 It's intended to be useful for preparing blueprints before uploading them to the Steam Workshop.
 
+![screenshot](/docs/screenshot.jpg)
+
 # Project status
 
 Early development, no release build, and master is not 'officially' stable yet. Initial commit have been just pushed out, after the volatility of the foundational aspects of the design seemed to have finally settled. :) So at the moment this won't be so interesting for common users.

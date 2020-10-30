@@ -89,6 +89,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Media\Appicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Easy.MessageHub, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Easy.MessageHub.3.4.0\lib\net35\Easy.MessageHub.dll</HintPath>
@@ -243,6 +249,12 @@
       <Project>{bc444c76-47ef-4648-9f2a-63f6a5a4a9c6}</Project>
       <Name>LeakysBlueprinter.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\Appicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\se-spaceman.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
