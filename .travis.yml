@@ -1,0 +1,7 @@
+language: csharp
+solution: LeakysBlueprinter.sln
+install:
+  - nuget restore LeakysBlueprinter.sln
+script:
+  - msbuild /p:Configuration=Test LeakysBlueprinter.sln
+  - mono ./packages/NUnit.ConsoleRunner.3.11.1/tools/nunit3-console.exe ./LeakysBlueprinter.Model.Tests/bin/Debug/GridOS.LeakysBlueprinter.Model.dll
