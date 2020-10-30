@@ -3,12 +3,13 @@ using System.Xml.Linq;
 
 namespace LeakysBlueprinter.Model
 {
+    // TODO: Get rid of this 'grid-specific' base class... this is pure bloat.
     internal abstract class GridQueryHandlerBase<TQuery, TResult> : QueryHandlerBase<TQuery, TResult>
         where TQuery : IGridQuery<TResult>
     {
         // TODO: Implement support for cross-cutting concerns, e.g. logging
 
-        public GridQueryHandlerBase(IBlueprintDataContext dataContext) : base(dataContext)
+        public GridQueryHandlerBase(IDefinitionsRepository definitions, IBlueprintDataContext dataContext) : base(definitions, dataContext)
         { }
 
         /// <summary>

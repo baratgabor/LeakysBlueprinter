@@ -32,7 +32,13 @@ namespace LeakysBlueprinter.UI.WPF.ViewModels
         private static int counter = 0;
 
         public string FilePath { get; private set; }
-        public string Creator { get; private set; } = "Unknown";
+        public string Creator => _blueprint.CreatorName;
+
+        public string Mass { get; private set; }
+        public int GridCount => _blueprint.GridCount;
+        public int BlockCount => _blueprint.BlockCount;
+        public int DamagedBlockCount => _blueprint.DamagedBlockCount;
+        public int IncompleteBlockCount => _blueprint.IncompleteBlockCount;
 
         public BlueprintWorkspaceViewModel()
         {
@@ -46,18 +52,17 @@ namespace LeakysBlueprinter.UI.WPF.ViewModels
             counter--;
         }
 
+        private readonly BlueprintService _blueprint;
 
-        private BlueprintService _service;
         public BlueprintWorkspaceViewModel(string blueprintURI, BlueprintService service)
         {
             counter++;
 
-            _service = service;
+            _blueprint = service;
             Init(blueprintURI);
-            var query = new GetGridMassQuery()
-            {
-                GridEntityId = _service.Blueprint.Descendants("CubeGrid").First().Element("EntityId").Value
-            };
+
+            DisplayName = _blueprint.BlueprintName;
+            Mass = _blueprint.Mass > 100000 ? $"{(_blueprint.Mass / 1000):#,##0.00} tons" : $"{_blueprint.Mass:#,##0.00} kg";
         }
 
         private void Init(string blueprintURI)

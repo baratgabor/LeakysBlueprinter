@@ -12,81 +12,6 @@
 
     <!--DataContext set implicitly by DataTemplate in MainView-->
 
-    <UserControl.Resources>
-        <XmlDataProvider x:Key="TestXml2">
-            <x:XData>
-                <Checklist xmlns="">
-                    <ListNode Title="Socks"/>
-                    <ListNode Title="Shoes"/>
-                    <ListNode Title="Toothbrush"/>
-                </Checklist>
-            </x:XData>
-        </XmlDataProvider>
-
-        <XmlDataProvider x:Key="TestXml">
-            <x:XData>
-                <CubeBlocks xmlns="">
-                    <MyObjectBuilder_CubeBlock type="MyObjectBuilder_Thrust">
-                        <SubtypeName>SmallBlockSmallHydrogenThrust</SubtypeName>
-                        <EntityId>127709941346940417</EntityId>
-                        <Min x="-1" y="-4" z="2" />
-                        <IntegrityPercent>0.8519243</IntegrityPercent>
-                        <BlockOrientation Forward="Left" Up="Forward" />
-                        <ColorMaskHSV x="0.691907763" y="-0.8" z="0.55" />
-                        <ConstructionStockpile>
-                            <Items type="MyObjectBuilder_StockpileItem">
-                                <Amount>16</Amount>
-                                <PhysicalContent type="MyObjectBuilder_Ore">
-                                    <SubtypeName>Scrap</SubtypeName>
-                                </PhysicalContent>
-                            </Items>
-                        </ConstructionStockpile>
-                        <CustomName>Hydrogen Thrusters 16</CustomName>
-                        <ShowOnHUD>false</ShowOnHUD>
-                        <ShowInTerminal>true</ShowInTerminal>
-                        <ShowInToolbarConfig>true</ShowInToolbarConfig>
-                        <ShowInInventory>true</ShowInInventory>
-                        <Enabled>true</Enabled>
-                    </MyObjectBuilder_CubeBlock>
-                    <MyObjectBuilder_CubeBlock type="MyObjectBuilder_Conveyor">
-                        <SubtypeName>SmallBlockConveyor</SubtypeName>
-                        <EntityId>81562504999927773</EntityId>
-                        <Min x="0" y="-4" z="2" />
-                        <BlockOrientation Forward="Forward" Up="Down" />
-                        <ColorMaskHSV x="0.691907763" y="-0.8" z="0.55" />
-                    </MyObjectBuilder_CubeBlock>
-                    <MyObjectBuilder_CubeBlock type="MyObjectBuilder_Thrust">
-                        <SubtypeName>SmallBlockSmallHydrogenThrust</SubtypeName>
-                        <EntityId>103240782482854494</EntityId>
-                        <Min x="1" y="-4" z="2" />
-                        <BlockOrientation Forward="Right" Up="Forward" />
-                        <ColorMaskHSV x="0.691907763" y="-0.8" z="0.55" />
-                        <CustomName>Hydrogen Thrusters 15</CustomName>
-                        <ShowOnHUD>false</ShowOnHUD>
-                        <ShowInTerminal>true</ShowInTerminal>
-                        <ShowInToolbarConfig>true</ShowInToolbarConfig>
-                        <ShowInInventory>true</ShowInInventory>
-                        <Enabled>true</Enabled>
-                    </MyObjectBuilder_CubeBlock>
-                </CubeBlocks>
-            </x:XData>
-        </XmlDataProvider>
-
-        <DataTemplate x:Key="BpTemplate">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Path=Element[SubtypeName].Value}"></TextBlock>
-                <TextBlock Text=", "></TextBlock>
-                <TextBlock Text="{Binding Path=Element[IntegrityPercent].Value}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
-
-        <DataTemplate x:Key="ListNodeTemplate2">
-            <Label Content="test"></Label>
-        </DataTemplate>
-
-    </UserControl.Resources>
-
-
     <DockPanel>
 
         <Grid DockPanel.Dock="Top" Margin="10">
@@ -101,27 +26,27 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="160"></ColumnDefinition>
-                <ColumnDefinition Width="100"></ColumnDefinition>
-                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="176"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Grid.Row="0">Creator:</TextBlock>
             <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Creator}"/>
 
             <TextBlock Grid.Column="0" Grid.Row="1">Number of grids:</TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding NumOfGrids}"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding GridCount}"/>
 
             <TextBlock Grid.Column="0" Grid.Row="2">Number of blocks:</TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding NumOfBlocks}"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding BlockCount}"/>
 
             <TextBlock Grid.Column="0" Grid.Row="3">Number of damaged blocks:</TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding NumOfDamagedBlocks}"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding DamagedBlockCount}"/>
 
-            <TextBlock Grid.Column="0" Grid.Row="4">Number of cockpits:</TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding NumOfCockpits}"/>
+            <TextBlock Grid.Column="0" Grid.Row="4">Number of incomplete blocks:</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding IncompleteBlockCount}"/>
 
-            <TextBlock Grid.Column="0" Grid.Row="5">Calculated Mass (kg):</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="5">Total mass:</TextBlock>
             <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding Mass}"/>
 
             <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding NewMass}"></TextBlock>

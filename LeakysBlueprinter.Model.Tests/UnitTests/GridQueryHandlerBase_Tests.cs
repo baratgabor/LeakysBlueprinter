@@ -19,7 +19,7 @@ namespace LeakysBlueprinter.Model.Tests.UnitTests
             public int DoHandleCalls { get; private set; } = 0;
             public XElement TargetGrid { get; private set; }
 
-            public FakeGridQueryHandler(IBlueprintDataContext dataContext) : base(dataContext)
+            public FakeGridQueryHandler(IDefinitionsRepository definitions, IBlueprintDataContext dataContext) : base(definitions, dataContext)
             { }
 
             protected override bool DoHandleOnGrid(IGridQuery<bool> query, XElement grid)
@@ -31,6 +31,7 @@ namespace LeakysBlueprinter.Model.Tests.UnitTests
         }
 
         Mock<IBlueprintDataContext> MockDataContext;
+        Mock<IDefinitionsRepository> MockDefinitions;
         FakeGridQueryHandler GridQueryHandler;
 
         [SetUp]
@@ -46,7 +47,9 @@ namespace LeakysBlueprinter.Model.Tests.UnitTests
                 .Setup(dc => dc.GetGridByEntityId(It.IsAny<string>()))
                 .Returns<XElement>(null);
 
-            GridQueryHandler = new FakeGridQueryHandler(MockDataContext.Object);
+            MockDefinitions = new Mock<IDefinitionsRepository>();
+
+            GridQueryHandler = new FakeGridQueryHandler(MockDefinitions.Object, MockDataContext.Object);
         }
 
         [Test]

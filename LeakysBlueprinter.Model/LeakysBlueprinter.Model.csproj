@@ -149,6 +149,8 @@
     <Compile Include="Queries\GetGridMassQueryHandler.cs" />
     <Compile Include="Queries\Base\IQuery.cs" />
     <Compile Include="Queries\Base\IQueryHandler.cs" />
+    <Compile Include="Queries\GetTotalMassQuery.cs" />
+    <Compile Include="Queries\GetTotalMassQueryHandler.cs" />
     <Compile Include="Repositories\BlueprintDataContext.cs" />
     <Compile Include="Services\AppModelFactory.cs" />
     <Compile Include="Repositories\Helper\DefinitionsTranslator.cs" />

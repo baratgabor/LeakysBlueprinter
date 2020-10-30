@@ -17,6 +17,60 @@ namespace LeakysBlueprinter.Model
             Context = context;
         }
 
+        public string GetBlueprintName()
+        {
+            return Context.Descendants("ShipBlueprint").First().Element("Id").Attribute("Subtype").Value;
+        }
+
+        public string GetCreatorName()
+        {
+            return Context.Descendants("ShipBlueprint").First().Element("DisplayName").Value;
+        }
+
+        public int GetGridCount()
+        {
+            return Context.Descendants("CubeGrid").Count();
+        }
+
+        public int GetBlockCount()
+        {
+            return Context.Descendants("MyObjectBuilder_CubeBlock").Count();
+        }
+
+        public IEnumerable<XElement> GetDamagedBlocks()
+        {
+            return GetAllBlocks().Where(e =>
+            {
+                var integrityProperty = e.Element("IntegrityPercent");
+                var buildProperty = e.Element("BuildPercent");
+                var integrityValue = integrityProperty == null ? 0 : float.Parse(integrityProperty.Value);
+                var buildValue = buildProperty == null ? 0 : float.Parse(buildProperty.Value);
+
+                return (integrityProperty != null && buildProperty == null) || (integrityValue < buildValue);
+            });
+        }
+
+        public int GetDamagedBlockCount()
+        {
+            return GetDamagedBlocks().Count();
+        }
+
+        public IEnumerable<XElement> GetIncompleteBlocks()
+        {
+            return GetAllBlocks().Where(e =>
+            {
+                var buildProperty = e.Element("BuildPercent");
+                var buildValue = buildProperty == null ? 0 : float.Parse(buildProperty.Value);
+
+                return buildProperty != null && buildValue < 1;
+            });
+        }
+
+        public int GetIncompleteBlockCount()
+        {
+            return GetIncompleteBlocks().Count();
+        }
+
         public XElement GetBlockByCoordinates(int x, int y, int z, XElement grid = null)
         {
             // TODO: Implement
@@ -30,7 +84,7 @@ namespace LeakysBlueprinter.Model
         }
 
         public IEnumerable<XElement> GetBlocksBySubtypeName(string subtypeName, XElement grid = null)
-            => GetBlockList(grid).Where(b => b.Element("SubtypeName")?.Value == subtypeName);
+            => GetAllBlocks(grid).Where(b => b.Element("SubtypeName")?.Value == subtypeName);
 
         // TODO: Consider if "property" is a misnomer here
         /// <summary>
@@ -41,7 +95,7 @@ namespace LeakysBlueprinter.Model
         /// <param name="grid">The grid to search on.</param>
         /// <returns>The list of matching blocks.</returns>
         public IEnumerable<XElement> GetBlocksWithProperty(string propertyNodeName, XElement grid = null)
-            => GetBlockList(grid).Where(e => e.Element(propertyNodeName) != null);
+            => GetAllBlocks(grid).Where(e => e.Element(propertyNodeName) != null);
 
         /// <summary>
         /// Returns the grid that has the provided display name.
@@ -92,14 +146,14 @@ namespace LeakysBlueprinter.Model
         /// </summary>
         /// <param name="grid">Optional parameter that, if provided, limits search to a single grid.</param>
         /// <returns>The list of blocks.</returns>
-        protected IEnumerable<XElement> GetBlockList(XElement grid = null)
+        public IEnumerable<XElement> GetAllBlocks(XElement grid = null)
         {
             if (grid != null)
                 // All cubeblocks of the given grid
                 return grid.Element("CubeBlocks").Elements();
             else
                 // All cubeblocks across all grids
-                return Context.Descendants("CubeGrids").First().Elements("CubeGrid").Elements("CubeBlocks").Elements();
+                return Context.Descendants("MyObjectBuilder_CubeBlock");
         }
     }
 

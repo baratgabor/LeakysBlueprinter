@@ -3,7 +3,7 @@
     /// <summary>
     /// Service contract stipulating the implementation of query and command handler methods
     /// </summary>
-    interface IService
+    interface IOperationService
     {
         /// <summary>
         /// Checks if the specified query can be executed.
@@ -26,7 +26,7 @@
         /// </summary>
         /// <param name="query">The query instance to execute.</param>
         /// <returns>The result of the query.</returns>
-        TResult Execute<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>;
+        TResult Execute<TResult>(IQuery<TResult> query);
 
         /// <summary>
         /// Executes the specified command

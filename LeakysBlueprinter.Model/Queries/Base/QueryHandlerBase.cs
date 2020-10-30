@@ -2,14 +2,17 @@
 
 namespace LeakysBlueprinter.Model
 {
+    // TODO: Get rid of this base class if possible; it adds little value.
     internal abstract class QueryHandlerBase<TQuery, TResult> : IQueryHandler<TQuery, TResult>
         where TQuery : IQuery<TResult>
     {
-        protected IBlueprintDataContext _dataContext;
+        protected readonly IBlueprintDataContext _dataContext;
+        protected readonly IDefinitionsRepository _definitions;
 
-        public QueryHandlerBase(IBlueprintDataContext dataContext)
+        public QueryHandlerBase(IDefinitionsRepository definitions, IBlueprintDataContext dataContext)
         {
             _dataContext = dataContext;
+            _definitions = definitions;
         }
 
         /// <summary>

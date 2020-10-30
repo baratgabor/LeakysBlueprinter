@@ -7,11 +7,8 @@ namespace LeakysBlueprinter.Model.Queries
     /// </summary>
     internal class GetGridMassQueryHandler : GridQueryHandlerBase<GetGridMassQuery, float>
     {
-        protected IDefinitionsRepository _definitions;
-
-        public GetGridMassQueryHandler(IDefinitionsRepository definitions, IBlueprintDataContext dataContext) : base(dataContext)
+        public GetGridMassQueryHandler(IDefinitionsRepository definitions, IBlueprintDataContext dataContext) : base(definitions, dataContext)
         {
-            _definitions = definitions;
         }
 
         /// <summary>
