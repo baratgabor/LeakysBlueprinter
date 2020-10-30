@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/baratgabor/LeakysBlueprinter.svg?branch=master)](https://travis-ci.com/baratgabor/LeakysBlueprinter)
+
 # Leaky's Blueprinter
 
 This is a Windows desktop app for Space Engineers, made for the purpose of analyzing local blueprint files and executing various operations on them, for example:
@@ -11,6 +13,10 @@ This is a Windows desktop app for Space Engineers, made for the purpose of analy
 - And many more
 
 It's intended to be useful for preparing blueprints before uploading them to the Steam Workshop.
+
+Project is largely stalled, because honestly I had no idea how to design and structure the UI/UX properly to serve the wide variety of possible blueprints; since a blueprint can be a base, a ship, a rocket, a wheeled vehicle, etc. Possibly I'll just start focusing on a narrower, generic set of features that are useful for all blueprints. For example fixing damage, and being able to cut, slice and copy/paste parts of blueprints.
+
+I'm not sure how much time I'll have for completing this project, but I'll try to push it a bit further from time to time.
 
 # Project status
 
