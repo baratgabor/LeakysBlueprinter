@@ -14,9 +14,11 @@ This is a Windows desktop app for Space Engineers, made for the purpose of analy
 
 It's intended to be useful for preparing blueprints before uploading them to the Steam Workshop.
 
+**Updated to work with game version 1.196.**
+
 Project is largely stalled, because honestly I had no idea how to design and structure the UI/UX properly to serve the wide variety of possible blueprints; since a blueprint can be a base, a ship, a rocket, a wheeled vehicle, etc. Possibly I'll just start focusing on a narrower, generic set of features that are useful for all blueprints. For example fixing damage, and being able to cut, slice and copy/paste parts of blueprints.
 
-I'm not sure how much time I'll have for completing this project, but I'll try to push it a bit further from time to time.
+I'm not sure how much time I'll have for completing this project, but I'll try to push it a bit further from time to time. The folder structure is horrible btw. I hate myself for not doing feature folders when I started this. 😅
 
 # Project status
 
